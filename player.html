@@ -5,21 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M12 Assignment - The Music Player Application</title>
     <script src="js/player.js" defer></script>
+    <style>
+        .flex-container {
+            display: flex;
+            text-align:  center;
+        }
+        .box {
+            margin: 10px;
+            padding: 20px;
+
+        }
+    </style>
 </head>
 <body>
     <h1>The Music Player</h1>
     <!-- ADD DROP DOWN MENU -->
-    <div >
-        <select id ="albumChoice">
+    <div class="flex-container" >
+        <select class="box" id ="albumChoice">
             <option value="" >Select an album to play</option>
             
         </select>
+        <div id="result" class="box">
+            <button id="favBtn">Show My Favorite Album</button>
+        </div>
     </div>
     
     <!-- ADD PLAY BUTTON -->
-    <div id="result"></div>
+    
 
     <!-- ADD SHOW FAVORITE ALBUM BUTTON -->
-    <p id="favoriteAlbum"></p>
+    <h2 id="favoriteAlbum">
+
+    </h2>
 </body>
 </html>

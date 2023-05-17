@@ -60,13 +60,21 @@ albumsArtists.forEach((albumArtist) => {
     document.getElementById("albumChoice").appendChild(optionAlbum)
     console.log()
 })
-const selectElement = document.getElementById("albumChoice")
+const selectAlbum = document.getElementById("albumChoice")
 
-selectElement.addEventListener('change', (e) => {
+selectAlbum.addEventListener('change', (e) => {
     console.log(`${e.target.value} is playing`)
    jbox.playAlbum(e.target.value)
     // call jbox.playAlbum(album tille tat eas clicked on)
+    
+})
+
+const favAlbum = document.getElementById("result")
+
+favAlbum.addEventListener('click', (e) => {
     console.log(`Your favorite album is: ${jbox.favoriteAlbum()}`)
+    document.getElementById("favoriteAlbum").innerHTML = `Your favorite album is: ${jbox.favoriteAlbum()}`
+    
 })
 
 // jbox.addAlbum(album1)
