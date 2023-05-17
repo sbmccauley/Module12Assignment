@@ -36,15 +36,15 @@
 //         this._color = color
 //         this._height = height
 //         this._length = length
-//         console.log(`The new animal is a ${type} of the ${breed} breed.  It's color is ${color}, it is ${height} inches tall and ${length} inches in length.`)
+//         console.log(`The new animal is a ${type} of the ${breed} breed.\n It's color is ${color}.\n It is ${height} inches tall and ${length} inches in length.`)
 //     }
 // }
 // const hamish = new Animal('dog', 'Schnauzer', 'silver', '15', '20')
 
 // STEP 6
 // class Animal {
-//     
-//constructor(type, breed, color, height, length) {
+    
+// constructor(type, breed, color, height, length) {
 //         this._type = type
 //         this._breed = breed
 //         this._color = color
@@ -106,4 +106,40 @@
 // animal3.speak()
 
 // STEP 9
+
+// class WordFinderString extends String {
+    
+//     constructor(text){
+//         super(text)
+//     }
+//     findWords(word) {
+//         let selectedWordCount = 0
+    
+//         this._word = word.toLowerCase()
+//         let wordList = this.toLowerCase().replace(/[,.;!'\n]/g," ").split(" ")
+//         for (let item of wordList) {
+
+//             if (item === word) {
+//                 selectedWordCount++
+//             }
+//         }
+//         return selectedWordCount
+//     }
+// }
+
+// const myString = new WordFinderString(`Tomorrow, and tomorrow, and tomorrow,
+// Creeps in this petty pace from day to day,
+// To the last syllable of recorded time;
+// And all our yesterdays have lighted fools
+// The way to dusty death. Out, out, brief candle!
+// Life's but a walking shadow, a poor player,
+// That struts and frets his hour upon the stage,
+// And then is heard no more. It is a tale
+// Told by an idiot, full of sound and fury,
+// Signifying nothing.`)
+
+// wordEntry = prompt('Enter a word to search in our text')
+// const foundWord = myString.findWords(wordEntry)
+// alert(`In the text: \n\n ${myString} \n \n The word "${wordEntry}" occured in the text ${foundWord} time(s).`)
+
 

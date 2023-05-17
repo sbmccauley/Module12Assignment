@@ -49,3 +49,4 @@ album2.play()
 album3.play()
 
 console.log(`Your favorite album is: ${jbox.favoriteAlbum()}`)
+
