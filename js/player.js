@@ -5,6 +5,14 @@ class Jukebox {
     addAlbum = function(album) {
         this.albums.push(album)
     }
+    playAlbum = function(title) {
+        this.albums.forEach((entry) => {
+            if (entry.title === title) {
+                entry.play()
+            }
+        })
+    } 
+    
     favoriteAlbum = function() {
         let max = -1, fav
         for (let i = 0; i < this.albums.length; i++) {
@@ -32,21 +40,46 @@ class Album {
 }
 
 var jbox = new Jukebox()
-const album1 = new Album('Operation Ivy', 'Energy')
-const album2 = new Album('Blink 182', 'Dude Ranch')
-const album3 = new Album('New Found Glory', 'Sticks and Stones')
+// const album1 = new Album('Operation Ivy', 'Energy')
+// const album2 = new Album('Blink 182', 'Dude Ranch')
+// const album3 = new Album('New Found Glory', 'Sticks and Stones')
 
-jbox.addAlbum(album1)
-jbox.addAlbum(album2)
-jbox.addAlbum(album3)
 
-album1.play()
-album2.play()
-album2.play()
-album2.play()
-album2.play()
-album2.play()
-album3.play()
+const albumsArtists = [
+    {album: 'Operation Ivy', artist: 'Energy'},
+    {album: 'Blink 182', artist: 'Dude Ranch'},
+    {album: 'New Found', artist: 'Sticks and Stones'}
+]
 
-console.log(`Your favorite album is: ${jbox.favoriteAlbum()}`)
+albumsArtists.forEach((albumArtist) => {
+    let optionAlbum = document.createElement('option')
+    optionAlbum.text = albumArtist.album
+    let album = new Album(albumArtist.artist, albumArtist.album)
+    jbox.addAlbum(album)
+    
+    document.getElementById("albumChoice").appendChild(optionAlbum)
+    console.log()
+})
+const selectElement = document.getElementById("albumChoice")
+
+selectElement.addEventListener('change', (e) => {
+    console.log(`${e.target.value} is playing`)
+   jbox.playAlbum(e.target.value)
+    // call jbox.playAlbum(album tille tat eas clicked on)
+    console.log(`Your favorite album is: ${jbox.favoriteAlbum()}`)
+})
+
+// jbox.addAlbum(album1)
+// jbox.addAlbum(album2)
+// jbox.addAlbum(album3)
+
+// album1.play()
+// album2.play()
+// album2.play()
+// album2.play()
+// album2.play()
+// album2.play()
+// album3.play()
+
+
 
