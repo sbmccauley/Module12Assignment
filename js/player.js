@@ -14,7 +14,7 @@ class Jukebox {
     } 
     
     favoriteAlbum = function() {
-        let max = -1, fav
+        let max = -1, fav 
         for (let i = 0; i < this.albums.length; i++) {
             if (this.albums[i].played > max) {
                 max = this.albums[i].played
@@ -46,26 +46,26 @@ var jbox = new Jukebox()
 
 
 const albumsArtists = [
-    {album: 'Operation Ivy', artist: 'Energy'},
-    {album: 'Blink 182', artist: 'Dude Ranch'},
-    {album: 'New Found', artist: 'Sticks and Stones'}
+    {'album': 'Operation Ivy', 'artist': 'Energy'},
+    {'album': 'Blink 182', 'artist': 'Dude Ranch'},
+    {'album': 'New Found', 'artist': 'Sticks and Stones'}
 ]
 
-albumsArtists.forEach((albumArtist) => {
-    let optionAlbum = document.createElement('option')
-    optionAlbum.text = albumArtist.album
-    let album = new Album(albumArtist.artist, albumArtist.album)
+let option = ''
+for (let i = 0; i < albumsArtists.length; i++) {
+    option += `<option value ="${albumsArtists[i].album}"> ${albumsArtists[i].album} </option> `
+    let album = new Album(albumsArtists[i].artist, albumsArtists[i].album)
     jbox.addAlbum(album)
-    
-    document.getElementById("albumChoice").appendChild(optionAlbum)
-    console.log()
-})
+}
+document.getElementById("albumChoice").innerHTML = option
+
+
 const selectAlbum = document.getElementById("albumChoice")
 
-selectAlbum.addEventListener('change', (e) => {
+selectAlbum.addEventListener('click', (e) => {
     console.log(`${e.target.value} is playing`)
    jbox.playAlbum(e.target.value)
-    // call jbox.playAlbum(album tille tat eas clicked on)
+    
     
 })
 
