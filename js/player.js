@@ -62,12 +62,23 @@ document.getElementById("albumChoice").innerHTML = option
 
 const selectAlbum = document.getElementById("albumChoice")
 
+const playBtn = document.getElementById("playBtn")
+
+let selectedAlbum = albumsArtists[0].album
 selectAlbum.addEventListener('click', (e) => {
-    console.log(`${e.target.value} is playing`)
-   jbox.playAlbum(e.target.value)
-    
-    
+    console.log(`${e.target.value} has been chosen`)
+    selectedAlbum = e.target.value
 })
+    
+        
+playBtn.addEventListener('click', (e) => {
+    jbox.playAlbum(selectedAlbum)
+})
+
+ 
+    
+
+
 
 const favAlbum = document.getElementById("result")
 
