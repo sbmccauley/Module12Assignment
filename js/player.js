@@ -46,9 +46,9 @@ var jbox = new Jukebox()
 
 
 const albumsArtists = [
-    {'album': 'Operation Ivy', 'artist': 'Energy'},
-    {'album': 'Blink 182', 'artist': 'Dude Ranch'},
-    {'album': 'New Found', 'artist': 'Sticks and Stones'}
+    {'album': 'Energy', 'artist': 'Operation Ivy'},
+    {'album': 'Dude Ranch', 'artist': 'Blink 182'},
+    {'album': 'Sticks and Stones', 'artist': 'New Found Glory'}
 ]
 
 let option = ''
