@@ -53,7 +53,7 @@ const albumsArtists = [
 
 let option = ''
 for (let i = 0; i < albumsArtists.length; i++) {
-    option += `<option value ="${albumsArtists[i].album}"> ${albumsArtists[i].album} </option> `
+    option += `<option value ="${albumsArtists[i].album}"> ${albumsArtists[i].album} by ${albumsArtists[i].artist}</option> `
     let album = new Album(albumsArtists[i].artist, albumsArtists[i].album)
     jbox.addAlbum(album)
 }
@@ -84,7 +84,7 @@ const favAlbum = document.getElementById("result")
 
 favAlbum.addEventListener('click', (e) => {
     console.log(`Your favorite album is: ${jbox.favoriteAlbum()}`)
-    document.getElementById("favoriteAlbum").innerHTML = `Your favorite album is: ${jbox.favoriteAlbum()}`
+    document.getElementById("favoriteAlbum").innerHTML = `Your favorite album is ${jbox.favoriteAlbum()}`
     
 })
 
